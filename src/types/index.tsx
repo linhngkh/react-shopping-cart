@@ -4,7 +4,8 @@ id: number;
   price: number;
   description: string;
   category: string;
-  image: string;
+    image: string;
+    amount: number;
     rating: {
         count: number;
         rate: number

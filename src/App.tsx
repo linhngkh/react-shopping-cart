@@ -30,7 +30,10 @@ if(isLoading) return <div className="flex justify-center items-center mx-auto h-
   <span>Something went wrong.</span>
 </div>)
   
-  const getTotalItems = (items: ProductsItemType[]) => null
+  const getTotalItems = (items: ProductsItemType[]) =>  
+    items.reduce((ack: number, items) => ack + items.amount, 0)
+  
+  
   const handleAddToCart = (clickedItem: ProductsItemType) => null
   const handleRemoveFromCart = () => null
 
