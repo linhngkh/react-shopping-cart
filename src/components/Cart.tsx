@@ -12,7 +12,7 @@ type Props = {
 const Cart: React.FC<Props> = ({ productItems, addToCart, removeFromCart }) => {
   return (
     <div className="">
-      <h2 className="text-lg font-bold">Your Shopping Cart</h2>
+      <h1 className="text-lg font-bold text-black">Your Shopping Cart</h1>
       {productItems.length === 0 ? <p>Mo items in cart.</p> : null}
       {productItems.map((item) => (
         <CartItem

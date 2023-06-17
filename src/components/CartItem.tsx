@@ -9,8 +9,8 @@ type Props = {
 
 const CartItem: React.FC<Props> = ({ item, removeFromCart, addToCart }) => {
   return (
-    <div className="space-y-5">
-      <h3 className="font-bold text-lg text-black">{item.title}</h3>
+    <div className="space-y-4">
+      <h3 className="font-semibold text-lg text-black">{item.title}</h3>
       <div className="flex justify-between">
         <p className="font-bold text-sm">Price: €{item.price}</p>
         <p className="font-bold text-sm">
@@ -18,22 +18,27 @@ const CartItem: React.FC<Props> = ({ item, removeFromCart, addToCart }) => {
         </p>
       </div>
 
-      <div className="flex gap-4 items-center">
+      <div className="flex items-center justify-between">
         <button
-          className="px-2 py-1 bg-slate-300 text-white rounded-md"
+          className="px-2 py-1 bg-slate-300 text-black font-bold rounded-md"
           onClick={() => removeFromCart(item.id)}
         >
           -
         </button>
         <p className="font-bold">{item.amount}</p>
         <button
-          className="px-2 py-1 bg-slate-300 text-white rounded-md"
+          className="px-2 py-1 bg-slate-300 text-black font-bold rounded-md"
           onClick={() => addToCart(item)}
         >
           +
         </button>
+        <img
+          src={item.image}
+          alt={item.title}
+          className="max-w-[100px] object-cover"
+        />
       </div>
-      <img src={item.image} alt={item.title} />
+      <div className="bg-gray-200 h-0.5"></div>
     </div>
   );
 };

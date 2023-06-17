@@ -4,8 +4,10 @@ const Product: React.FC<Props> = ({ item, handleAddToCart }) => {
   const { image, title, description, price } = item;
   return (
     <div className="">
-      <div className="  w-full h-[950px] bg-white shadow-xl  border-2 mt-5 rounded-xl p-4">
-        <img src={image} alt={title} className="max-h-[250px] object-cover" />
+      <div className="w-full h-[950px] bg-white shadow-xl  border-2 mt-5 rounded-xl p-4">
+        <div className="flex items-center justify-center">
+          <img src={image} alt={title} className="max-w-[250px] object-cover" />
+        </div>
 
         <div className="pt-4">
           <h2 className="font-bold text-lg">{title}</h2>
