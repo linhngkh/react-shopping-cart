@@ -78,7 +78,7 @@ function App() {
         {" "}
         {data?.map((product) => (
           <Product
-            product={product}
+            item={product}
             key={product.id}
             handleAddToCart={handleAddToCart}
           />

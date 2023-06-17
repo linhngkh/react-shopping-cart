@@ -1,7 +1,7 @@
 import { Props } from "../types";
 
-const Product: React.FC<Props> = ({ product, handleAddToCart }) => {
-  const { image, title, description, price } = product;
+const Product: React.FC<Props> = ({ item, handleAddToCart }) => {
+  const { image, title, description, price } = item;
   return (
     <div className="flex flex-row justify-between">
       <div className="  w-96 bg-white shadow-xl  border-2 mt-5">
@@ -19,7 +19,7 @@ const Product: React.FC<Props> = ({ product, handleAddToCart }) => {
             <div className="badge badge-outline">Fashion</div>
             <div className="badge badge-outline">Products</div>
           </div>
-          <button className="btn" onClick={() => handleAddToCart(product)}>
+          <button className="btn" onClick={() => handleAddToCart(item)}>
             Add to cart
           </button>
         </div>

@@ -13,7 +13,7 @@ export type ProductsItemType = {
 };
 
 export type Props = {
-  product: ProductsItemType;
+  item: ProductsItemType;
   handleAddToCart: (clickedItem: ProductsItemType) => void;
 };
 

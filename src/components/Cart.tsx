@@ -1,6 +1,7 @@
 import React from "react";
 
 import { ProductsItemType } from "../types";
+import CartItem from "./CartItem";
 
 type Props = {
   productItems: ProductsItemType[];
@@ -14,7 +15,12 @@ const Cart: React.FC<Props> = ({ productItems, addToCart, removeFromCart }) => {
       <h2>Your Shopping Cart</h2>
       {productItems.length === 0 ? <p>Mo items in cart.</p> : null}
       {productItems.map((item) => (
-        <CartItem />
+        <CartItem
+          key={item.id}
+          item={item}
+          addToCart={addToCart}
+          removeFromCart={removeFromCart}
+        />
       ))}
     </aside>
   );

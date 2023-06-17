@@ -8,10 +8,14 @@ type Props = {
 
 type CombinedProps = DrawerProps & Props;
 
-const Drawer = ({ setCartOpen, cartOpen, children }: CombinedProps) => {
+const Drawer: React.FC<CombinedProps> = ({
+  setCartOpen,
+  cartOpen,
+  children,
+}) => {
   return (
     <div
-      className="w-40 h-full flex justify-end bg-black"
+      className="w-80 h-screen flex justify-end  bg-black"
       onClick={() => setCartOpen(false)}
     >
       {children}
