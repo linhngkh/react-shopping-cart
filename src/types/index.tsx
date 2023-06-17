@@ -18,3 +18,9 @@ export type Props = {
     product: ProductsItemType;
     handleAddToCart: (clickedItem: ProductsItemType) => void;
 }
+
+
+export type DrawerProps = {
+    cartOpen: boolean;
+    setCartOpen: (cartOpen: boolean ) => void
+}

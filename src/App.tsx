@@ -7,10 +7,17 @@ import {BsCart4} from "react-icons/bs"
 import { ProductsItemType } from "./types";
 import { getProducts } from "./api/apiQuery";
 import Product from "./components/Product";
+import Navbar from "./components/Navbar";
+import Footer from "./components/Footer";
+import Drawer from "./components/Drawer";
 
 
 
 function App() {
+  const [cartOpen, setCartOpen] = useState(false)
+
+  const [cartItem, setCartItem] = useState([] as ProductsItemType[])
+
   const { data, isLoading, error } = useQuery<ProductsItemType[]>(
    { queryKey: ["products"],
     queryFn: getProducts,}
@@ -23,16 +30,22 @@ if(isLoading) return <div className="flex justify-center items-center mx-auto h-
   <span>Something went wrong.</span>
 </div>)
   
-  const getTotalItems = () => null
+  const getTotalItems = (items: ProductsItemType[]) => null
   const handleAddToCart = (clickedItem: ProductsItemType) => null
   const handleRemoveFromCart = () => null
 
   
   
   return <>
-    {data.map((product) => (
-      <Product product={product} key={product.id} handleAddToCart={handleAddToCart}/>
+    <Navbar />
+    {cartOpen && <Drawer cartOpen={ cartOpen} setCartOpen={setCartOpen} />}
+    
+    <button onClick={() => setCartOpen(true)}>here</button>
+    <div > <BsCart4/></div>
+    {data?.map((product) => (
+      <Product product={product} key={product.id} handleAddToCart={handleAddToCart} />
     ))} 
+    <Footer/>
   </>;
 }
 
