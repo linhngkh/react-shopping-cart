@@ -1,13 +1,31 @@
-import React from 'react'
+import { ProductsItemType } from "../types";
+import { BsCart4 } from "react-icons/bs";
 
-const Navbar = () => {
+type Props = {
+  cartItem: ProductsItemType[];
+  getTotalItems: (items: ProductsItemType[]) => number;
+  setCartOpen: (cartOpen: boolean) => void;
+};
+
+const Navbar: React.FC<Props> = ({ getTotalItems, cartItem, setCartOpen }) => {
   return (
-    <div className="navbar ">
-  <div className="flex-1">
-    <a className="text-xl">ShoppiStyle</a>
-  </div>
-  </div>
-  )
-}
+    <div className="flex justify-between px-10 py-5">
+      <div className="">
+        <a className="text-xl">Shoppi&Style</a>
+      </div>
 
-export default Navbar
+      <div className="relative">
+        <button onClick={() => setCartOpen(true)}>
+          {" "}
+          <BsCart4 className="w-10 h-10" />
+        </button>
+
+        <span className="absolute top-5 -right-4 inline-flex items-center justify-center w-7 h-7 bg-red-500 text-white text-xs font-bold rounded-full">
+          {getTotalItems(cartItem)}
+        </span>
+      </div>
+    </div>
+  );
+};
+
+export default Navbar;

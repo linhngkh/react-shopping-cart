@@ -3,25 +3,35 @@ import { Props } from "../types";
 const Product: React.FC<Props> = ({ item, handleAddToCart }) => {
   const { image, title, description, price } = item;
   return (
-    <div className="flex flex-row justify-between">
-      <div className="  w-96 bg-white shadow-xl  border-2 mt-5">
-        <figure>
-          <img src={image} alt={title} className="object-contain" />
-        </figure>
-        <div className="card-body  card-compact">
-          <h2 className="card-title">
-            {title}
-            <div className="badge badge-secondary">NEW</div>
-          </h2>
-          <p className="text-xs text-gray-800">{description}</p>
-          <h3 className="font-bold">${price}</h3>
-          <div className="card-actions justify-end">
-            <div className="badge badge-outline">Fashion</div>
-            <div className="badge badge-outline">Products</div>
+    <div className="">
+      <div className="  w-full h-[950px] bg-white shadow-xl  border-2 mt-5 rounded-xl p-4">
+        <img src={image} alt={title} className="max-h-[250px] object-cover" />
+
+        <div className="pt-4">
+          <h2 className="font-bold text-lg">{title}</h2>
+          <div className="max-w-xs">
+            <p className="text-xs text-gray-800 leading-snug overflow-hidden whitespace-normal">
+              {description}
+            </p>
           </div>
-          <button className="btn" onClick={() => handleAddToCart(item)}>
-            Add to cart
-          </button>
+
+          <h3 className="font-bold">${price}</h3>
+          <div className="flex justify-around">
+            <div className="border-2 text-sm border-gray-300 rounded-xl w-20 text-center">
+              Fashion
+            </div>
+            <div className="border-2 text-sm border-gray-300 rounded-xl w-20 text-center">
+              Products
+            </div>
+          </div>
+          <div className="flex flex-col items-center pt-5">
+            <button
+              className="bg-slate-200 px-5 py-2"
+              onClick={() => handleAddToCart(item)}
+            >
+              Add to cart
+            </button>
+          </div>
         </div>
       </div>
     </div>

@@ -2,7 +2,7 @@ import { useState } from "react";
 import { useQuery } from "react-query";
 
 //components
-import { BsCart4 } from "react-icons/bs";
+
 import { ProductsItemType } from "./types";
 import { getProducts } from "./api/apiQuery";
 import Product from "./components/Product";
@@ -51,12 +51,30 @@ function App() {
   const getTotalItems = (items: ProductsItemType[]) =>
     items.reduce((ack: number, items) => ack + items.amount, 0);
 
-  const handleAddToCart = (clickedItem: ProductsItemType) => null;
+  const handleAddToCart = (clickedItem: ProductsItemType) => {
+    setCartItem((prev) => {
+      //check if the item is already added into the cart
+      const isItemInCart = prev.find((item) => item.id === clickedItem.id);
+      if (isItemInCart) {
+        return prev.map((item) =>
+          item.id === clickedItem.id
+            ? { ...item, amount: item.amount + 1 }
+            : item
+        );
+      }
+      // first time item is added
+      return [...prev, { ...clickedItem, amount: 1 }];
+    });
+  };
   const handleRemoveFromCart = () => null;
 
   return (
-    <section className="">
-      <Navbar />
+    <section className="px-20">
+      <Navbar
+        cartItem={cartItem}
+        getTotalItems={getTotalItems}
+        setCartOpen={setCartOpen}
+      />
       {cartOpen && (
         <Drawer cartOpen={cartOpen} setCartOpen={setCartOpen}>
           {" "}
@@ -68,13 +86,7 @@ function App() {
         </Drawer>
       )}
 
-      <button onClick={() => setCartOpen(true)}>here</button>
-      <div>
-        {" "}
-        <BsCart4 />
-        <div>{getTotalItems(cartItem)}</div>
-      </div>
-      <div className="flex gap-4">
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
         {" "}
         {data?.map((product) => (
           <Product

@@ -1,6 +1,6 @@
 import React from "react";
 import { DrawerProps } from "../types";
-import Cart from "./Cart";
+import { IoMdCloseCircleOutline } from "react-icons/io";
 
 type Props = {
   children: React.ReactNode;
@@ -8,16 +8,12 @@ type Props = {
 
 type CombinedProps = DrawerProps & Props;
 
-const Drawer: React.FC<CombinedProps> = ({
-  setCartOpen,
-  cartOpen,
-  children,
-}) => {
+const Drawer: React.FC<CombinedProps> = ({ setCartOpen, children }) => {
   return (
-    <div
-      className="w-80 h-screen flex justify-end  bg-black"
-      onClick={() => setCartOpen(false)}
-    >
+    <div className="absolute inset-y-0 right-0 w-[500px] bg-white p-4 shadow">
+      <button onClick={() => setCartOpen(false)}>
+        <IoMdCloseCircleOutline className="w-6 h-6" />
+      </button>
       {children}
     </div>
   );
