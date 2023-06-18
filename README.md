@@ -6,10 +6,10 @@
 * TailwindCSS
 
 ### Shopping cart functionality:
-1. Get item's quantity
-2. Add quantity to cart
-3. Decrease quantity in cart
-4. Remove from cart
+1. Get product's quantity
+2. Add product to cart
+3. Decrease product in cart
+4. Remove product from cart
 
 ### Deploy
 Firebase
