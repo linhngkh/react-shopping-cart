@@ -20,7 +20,7 @@ const CartItem: React.FC<Props> = ({ item, removeFromCart, addToCart }) => {
         </p>
       </div>
 
-      <div className="flex items-center justify-between">
+      <div className="flex-between">
         <button
           className={`${buttonStyles}`}
           onClick={() => removeFromCart(item.id)}

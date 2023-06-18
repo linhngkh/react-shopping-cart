@@ -3,8 +3,8 @@ import { Props } from "../types";
 const Product: React.FC<Props> = ({ item, handleAddToCart }) => {
   const { image, title, description, price } = item;
   return (
-    <section className="flex flex-col min-w-[250px] w-full h-[750px] bg-white shadow-xl  border-2 mt-5 rounded-xl p-6">
-      <div className="flex items-center justify-center  max-w-md overflow-hidden bg-cover bg-no-repeat ">
+    <section className="flex-column min-w-[250px] w-full h-[750px] bg-white shadow-xl  border-2 mt-5 rounded-xl p-6">
+      <div className="flex-center  max-w-md overflow-hidden bg-cover bg-no-repeat ">
         <img
           src={image}
           alt={title}
@@ -30,7 +30,7 @@ const Product: React.FC<Props> = ({ item, handleAddToCart }) => {
           </div>
         </div>
 
-        <div className=" flex flex-col justify-end">
+        <div className="flex-center">
           <button
             className="bg-slate-200 px-5 py-2 rounded-lg"
             onClick={() => handleAddToCart(item)}
