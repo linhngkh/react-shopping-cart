@@ -1,9 +1,9 @@
 ## Responsive Shopping Cart with TypeScript, React Query and TailwindCSS
 
 ### Technology:
-– Typescript
-- React-query
-- TailwindCSS
+* Typescript
+* React-query
+* TailwindCSS
 
 ### Shopping cart functionality:
 1. Get item's quantity
