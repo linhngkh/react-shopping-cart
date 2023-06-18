@@ -25,7 +25,10 @@ const Product: React.FC<Props> = ({ item, handleAddToCart }) => {
       </div>
 
       <div className="pt-4 flex items-start justify-between flex-col space-y-2">
-        <h2 className="font-bold text-lg ">{title}</h2>
+        <div>
+          <h2 className="font-bold text-lg ">{title}</h2>
+        </div>
+
         <div className="max-w-xs">
           <p className="text-xs  text-gray-800  break-all leading-tight">
             {truncatedText}
@@ -38,17 +41,13 @@ const Product: React.FC<Props> = ({ item, handleAddToCart }) => {
           </button>
         </div>
 
-        <h3 className="font-extrabold text-[32px] leading-[38px] mt-3">
-          ${price}
-        </h3>
-        <div className="flex gap-4">
-          <div className="border-2 text-sm border-gray-300 rounded-xl w-20 text-center">
-            Fashion
-          </div>
-          <div className="border-2 text-sm border-gray-300 rounded-xl w-20 text-center">
-            Products
-          </div>
+        <div>
+          <h3 className="font-extrabold text-[32px] leading-[38px] mt-3">
+            ${price}
+          </h3>
         </div>
+
+      
 
         <div className="flex-center">
           <button

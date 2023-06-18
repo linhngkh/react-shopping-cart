@@ -24,5 +24,5 @@
 }
 
 .product-card {
-  @apply flex flex-col p-6 min-w-[250px] w-full h-[750px]  text-black bg-white hover:shadow-md rounded-3xl mt-5 border-2  hover:border-4;
+  @apply flex flex-col p-6 min-w-[250px] w-full max-h-[750px] h-[600px]  text-black bg-white hover:shadow-md rounded-3xl mt-5 border-2  hover:border-4;
 }
