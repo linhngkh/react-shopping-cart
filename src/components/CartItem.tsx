@@ -31,6 +31,7 @@ const CartItem: React.FC<Props> = ({ item, removeFromCart, addToCart }) => {
         <button className={`${buttonStyles}`} onClick={() => addToCart(item)}>
           +
         </button>
+
         <img
           src={item.image}
           alt={item.title}
