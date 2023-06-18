@@ -11,7 +11,7 @@ const Navbar: React.FC<Props> = ({ getTotalItems, cartItem, setCartOpen }) => {
   return (
     <div className="flex justify-between px-10 py-5">
       <div className="">
-        <a className="text-xl">Shoppi&Style</a>
+        <a className="text-xl font-extrabold">Shoppi&Style</a>
       </div>
 
       <div className="relative">

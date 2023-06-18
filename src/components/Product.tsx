@@ -20,7 +20,7 @@ const Product: React.FC<Props> = ({ item, handleAddToCart }) => {
         <img
           src={image}
           alt={title}
-          className=" w-full h-40 my-3 object-contain transition duration-300 ease-in-out hover:scale-110 "
+          className=" w-full h-40  object-contain transition duration-300 ease-in-out hover:scale-110 "
         />
       </div>
 
@@ -47,11 +47,9 @@ const Product: React.FC<Props> = ({ item, handleAddToCart }) => {
           </h3>
         </div>
 
-      
-
         <div className="flex-center">
           <button
-            className="bg-slate-200 px-5 py-2 rounded-lg"
+            className="bg-slate-200 px-5 py-2 rounded-lg hover:bg-slate-400 hover:text-white hover:shadow-sm"
             onClick={() => handleAddToCart(item)}
           >
             Add to cart
