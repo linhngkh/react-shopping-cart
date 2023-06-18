@@ -6,6 +6,8 @@ type Props = {
   addToCart: (clickedItem: ProductsItemType) => void;
   removeFromCart: (id: number) => void;
 };
+//styles
+const buttonStyles = `px-6 py-2 bg-slate-300 text-black font-bold rounded-md`;
 
 const CartItem: React.FC<Props> = ({ item, removeFromCart, addToCart }) => {
   return (
@@ -20,16 +22,13 @@ const CartItem: React.FC<Props> = ({ item, removeFromCart, addToCart }) => {
 
       <div className="flex items-center justify-between">
         <button
-          className="px-2 py-1 bg-slate-300 text-black font-bold rounded-md"
+          className={`${buttonStyles}`}
           onClick={() => removeFromCart(item.id)}
         >
           -
         </button>
         <p className="font-bold">{item.amount}</p>
-        <button
-          className="px-2 py-1 bg-slate-300 text-black font-bold rounded-md"
-          onClick={() => addToCart(item)}
-        >
+        <button className={`${buttonStyles}`} onClick={() => addToCart(item)}>
           +
         </button>
         <img

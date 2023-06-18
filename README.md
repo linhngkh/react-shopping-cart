@@ -1,1 +1,1 @@
-## Shopping Cart with TypeScript, React Query and TailwindCSS
+## Shopping Cart with TypeScript, React Query and TailwindCSSyou

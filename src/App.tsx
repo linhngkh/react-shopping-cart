@@ -66,7 +66,20 @@ function App() {
       return [...prev, { ...clickedItem, amount: 1 }];
     });
   };
-  const handleRemoveFromCart = () => null;
+  const handleRemoveFromCart = (id: number) => {
+    setCartItem((prev) =>
+      //ack as an empty array, and specify it as ProductsItemType
+      prev.reduce((ack, item) => {
+        if (item.id === id) {
+          if (item.amount === 1) return ack;
+          //return new array
+          return [...ack, { ...item, amount: item.amount - 1 }];
+        } else {
+          return [...ack, item];
+        }
+      }, [] as ProductsItemType[])
+    );
+  };
 
   return (
     <section className="px-20">
