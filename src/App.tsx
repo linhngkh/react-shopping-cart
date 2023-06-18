@@ -82,7 +82,7 @@ function App() {
   };
 
   return (
-    <main className="px-20">
+    <main className="">
       <Navbar
         cartItem={cartItem}
         getTotalItems={getTotalItems}
