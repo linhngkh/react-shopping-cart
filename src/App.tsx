@@ -99,7 +99,7 @@ function App() {
         </Drawer>
       )}
 
-      <section className="grid 2xl:grid-cols-4 xl:grid-cols-3 md:grid-cols-2 grid-cols-1 w-full gap-8 pt-10">
+      <section className="grid 2xl:grid-cols-4 xl:grid-cols-3 md:grid-cols-2 grid-cols-1 w-full gap-8 pt-10 ">
         {data?.map((product) => (
           <Product
             item={product}

@@ -1,9 +1,21 @@
 import { Props } from "../types";
-
+import { useState } from "react";
 const Product: React.FC<Props> = ({ item, handleAddToCart }) => {
+  //STATE
+  const [showFull, setShowFull] = useState(false);
+  //DESTRUCTURING
   const { image, title, description, price } = item;
+
+  const toggleDescription = () => {
+    setShowFull(!showFull);
+  };
+
+  const truncatedText = showFull
+    ? description
+    : description.slice(0, 200) + "...";
+
   return (
-    <section className="product-card">
+    <section className="product-card ">
       <div className="flex-center max-w-md overflow-hidden bg-cover bg-no-repeat ">
         <img
           src={image}
@@ -16,8 +28,14 @@ const Product: React.FC<Props> = ({ item, handleAddToCart }) => {
         <h2 className="font-bold text-lg ">{title}</h2>
         <div className="max-w-xs">
           <p className="text-xs  text-gray-800  break-all leading-tight">
-            {description}
+            {truncatedText}
           </p>
+          <button
+            className="text-blue-500 hover:underline text-sm"
+            onClick={toggleDescription}
+          >
+            {showFull ? "Show less" : "Show more"}
+          </button>
         </div>
 
         <h3 className="font-extrabold text-[32px] leading-[38px] mt-3">
