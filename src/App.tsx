@@ -5,11 +5,11 @@ import { useQuery } from "react-query";
 
 import { ProductsItemType } from "./types";
 import { getProducts } from "./api/apiQuery";
-import Product from "./components/Product";
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
 import Drawer from "./components/Drawer";
 import Cart from "./components/Cart";
+import ProductCard from "./components/ProductCard";
 
 function App() {
   const [cartOpen, setCartOpen] = useState(false);
@@ -90,7 +90,6 @@ function App() {
       />
       {cartOpen && (
         <Drawer cartOpen={cartOpen} setCartOpen={setCartOpen}>
-          {" "}
           <Cart
             productItems={cartItem}
             addToCart={handleAddToCart}
@@ -99,9 +98,9 @@ function App() {
         </Drawer>
       )}
 
-      <section className="grid 2xl:grid-cols-4 xl:grid-cols-3 md:grid-cols-2 grid-cols-1 w-full gap-8 pt-10 ">
+      <section className="grid-card">
         {data?.map((product) => (
-          <Product
+          <ProductCard
             item={product}
             key={product.id}
             handleAddToCart={handleAddToCart}

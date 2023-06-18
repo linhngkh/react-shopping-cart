@@ -9,7 +9,7 @@ type Props = {
 //styles
 const buttonStyles = `px-6 py-2 bg-slate-300 text-black font-bold rounded-md`;
 
-const CartItem: React.FC<Props> = ({ item, removeFromCart, addToCart }) => {
+const CartCheckout: React.FC<Props> = ({ item, removeFromCart, addToCart }) => {
   return (
     <section className="space-y-4">
       <h3 className="font-semibold text-lg text-black">{item.title}</h3>
@@ -43,4 +43,4 @@ const CartItem: React.FC<Props> = ({ item, removeFromCart, addToCart }) => {
   );
 };
 
-export default CartItem;
+export default CartCheckout;

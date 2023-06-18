@@ -26,3 +26,7 @@
 .product-card {
   @apply flex flex-col p-6 min-w-[350px] w-full max-h-[750px] h-[600px]  text-black bg-white hover:shadow-md rounded-3xl  border-2  hover:border-4;
 }
+
+.grid-card {
+  @apply grid 2xl:grid-cols-4 xl:grid-cols-3 md:grid-cols-2 grid-cols-1 w-full gap-8 pt-10;
+}

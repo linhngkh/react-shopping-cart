@@ -2,7 +2,7 @@ import React from "react";
 import ReactDOM from "react-dom/client";
 import App from "./App.tsx";
 import "./index.css";
-import "@stripe/stripe-js";
+
 import { QueryClient, QueryClientProvider } from "react-query";
 import {
   createBrowserRouter,

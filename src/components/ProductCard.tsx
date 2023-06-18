@@ -1,6 +1,7 @@
 import { Props } from "../types";
 import { useState } from "react";
-const Product: React.FC<Props> = ({ item, handleAddToCart }) => {
+
+const ProductCard: React.FC<Props> = ({ item, handleAddToCart }) => {
   //STATE
   const [showFull, setShowFull] = useState(false);
   //DESTRUCTURING
@@ -60,4 +61,4 @@ const Product: React.FC<Props> = ({ item, handleAddToCart }) => {
   );
 };
 
-export default Product;
+export default ProductCard;
