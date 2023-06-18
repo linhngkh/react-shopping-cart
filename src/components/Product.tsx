@@ -3,12 +3,12 @@ import { Props } from "../types";
 const Product: React.FC<Props> = ({ item, handleAddToCart }) => {
   const { image, title, description, price } = item;
   return (
-    <section className="flex-column min-w-[250px] w-full h-[750px] bg-white shadow-xl  border-2 mt-5 rounded-xl p-6">
-      <div className="flex-center  max-w-md overflow-hidden bg-cover bg-no-repeat ">
+    <section className="product-card">
+      <div className="flex-center max-w-md overflow-hidden bg-cover bg-no-repeat ">
         <img
           src={image}
           alt={title}
-          className=" w-full h-40 my-3 object-contain transition duration-300 ease-in-out hover:scale-110"
+          className=" w-full h-40 my-3 object-contain transition duration-300 ease-in-out hover:scale-110 "
         />
       </div>
 
