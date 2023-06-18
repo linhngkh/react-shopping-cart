@@ -11,7 +11,7 @@ const buttonStyles = `px-6 py-2 bg-slate-300 text-black font-bold rounded-md`;
 
 const CartItem: React.FC<Props> = ({ item, removeFromCart, addToCart }) => {
   return (
-    <div className="space-y-4">
+    <section className="space-y-4">
       <h3 className="font-semibold text-lg text-black">{item.title}</h3>
       <div className="flex justify-between">
         <p className="font-bold text-sm">Price: €{item.price}</p>
@@ -39,7 +39,7 @@ const CartItem: React.FC<Props> = ({ item, removeFromCart, addToCart }) => {
         />
       </div>
       <div className="bg-gray-200 h-0.5"></div>
-    </div>
+    </section>
   );
 };
 

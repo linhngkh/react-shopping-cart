@@ -4,15 +4,21 @@
 @tailwind components;
 @tailwind utilities;
 
-html,
-body,
-#root {
-  padding: 0;
+* {
   margin: 0;
-  height: 100%;
-  width: 100%;
+  padding: 0;
+  box-sizing: border-box;
   font-family: "DM Sans", sans-serif;
-  background-color: white;
+}
 
-  @apply text-gray-500;
+.flex-center {
+  @apply flex items-center justify-center;
+}
+
+.flex-between {
+  @apply flex justify-between items-center;
+}
+
+.flex-column {
+  @apply flex flex-col;
 }

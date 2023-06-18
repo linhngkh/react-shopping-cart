@@ -23,7 +23,7 @@ function App() {
 
   if (isLoading)
     return (
-      <div className="flex justify-center items-center mx-auto h-screen">
+      <div className="flex-center mx-auto h-screen">
         <span className="loading loading-bars loading-lg"></span>
       </div>
     );
@@ -82,7 +82,7 @@ function App() {
   };
 
   return (
-    <section className="px-20">
+    <main className="px-20">
       <Navbar
         cartItem={cartItem}
         getTotalItems={getTotalItems}
@@ -99,8 +99,7 @@ function App() {
         </Drawer>
       )}
 
-      <div className="relative grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
-        {" "}
+      <section className="relative w-full grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
         {data?.map((product) => (
           <Product
             item={product}
@@ -108,10 +107,10 @@ function App() {
             handleAddToCart={handleAddToCart}
           />
         ))}
-      </div>
+      </section>
 
       <Footer />
-    </section>
+    </main>
   );
 }
 
